@@ -58,14 +58,20 @@ for (int i = 1; i < (1 + rounds); i++)
         // end the loop early if the user guesses the correct number
         break;
     }
+
+    // If the user doesn't get the number within the number of guesses, "You Lose" and tell them the secret number
     else if (int.Parse(input) != secretNumber && (rounds - i) == 0)
     {
         Console.WriteLine($"You lose! The Secret Number was {secretNumber}!");
     }
+
+    // lets the user know the secret number is lower than their guess
     else if (int.Parse(input) > secretNumber)
     {
         Console.WriteLine($"The Secret Number is lower than {input}. Guesses left: {rounds - i}");
     }
+
+    // lets the user know the secret number is higher than their guess
     else if (int.Parse(input) < secretNumber)
     {
         Console.WriteLine($"The Secret Number is higher than {input}. Guesses left: {rounds - i}");
